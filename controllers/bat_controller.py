@@ -50,6 +50,7 @@ def save_bat():
     # db.session.add(player1)
     # db.session.add(player2)
     # db.session.add(player3)
+
     # db.session.commit()
 
     # bat1 = Bat(name="Red Bat", colour="red", smashability=3)
@@ -60,5 +61,3 @@ def save_bat():
     # db.session.add(bat2)
     # db.session.add(bat3)
     # db.session.commit()
-
-    
