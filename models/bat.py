@@ -8,6 +8,7 @@ class Bat (db.Model):
     smashability = db.Column(db.Integer)
     player_id = db.Column(db.Integer, db.ForeignKey('players.id'))
   
-    def __repr__(self):
-        return f"<Bat: id: {self.id}, name: {self.name}, colour: {self.colour}, smashability: {self.smashability}, player_id:{self.player.id}>"
+def __repr__(self):
+    return f"<Bat: id: {self.id}, name: {self.name}, colour: {self.colour}, smashability: {self.smashability}, player_id:{self.player.id}>"
     
+
