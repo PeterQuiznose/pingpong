@@ -16,6 +16,10 @@ def show_bats():
 def search():
     return render_template('search.jinja', title="Not a real search")
 
+@bat_blueprint.route("/bats/contact")
+def contact():
+    return render_template('contact.jinja', title="Contact")
+
 @bat_blueprint.route("/bats/<id>")
 def show_one_bat(id):
     bat_to_show = Bat.query.get(id)
