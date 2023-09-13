@@ -19,6 +19,11 @@
             </select>
             <label for="smashability">SMASHABILITY RATING</label>
             <input type="range" name="smashability" id="smashability" min="1" max="10" required>
+            <label for="dropdown">Select an option:</label>
+            <select id="dropdown" name="players">
+                {% for player in players %}
+                <option value="{{ player.id }}">{{ player.name }}</option>
+                {% endfor %} 
           </form>
         <div class="bat-container">
           {% for bat in bats %}
@@ -26,20 +31,6 @@
             <h2>Name: {{ bat.name }}</h2>
             <h3>Colour: {{ bat.colour }}</h3>
             <h4>SMASHABILITY RATING: {{ bat.smashability }}</h4>
-
-            {# <fieldset>
-              <legend>Book status</legend>
-                <input type="radio" id="checked-in" name="in-or-out - {{ book.title }}" value="checked-in"/>
-                <label for="checked-in">Check-in</label>
-                <input type="radio" id="checked-out" name="in-or-out - {{ book.title }}" value="checked-out"/>
-                <label for="checked-out">Check-Out</label>
-            </fieldset> #}
-
-            {# {% if book.checked_out %}
-              <p><i>Unavailable &#10060</i></p>
-              {% else %}
-                <p><i>Available &#9989</i></p>
-            {% endif %} #}
 
             <a href="/bats/{{bats.index(bat)}}">Show Details</a>
             <br>
