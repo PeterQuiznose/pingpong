@@ -10,3 +10,4 @@ class Bat (db.Model):
   
     def __repr__(self):
         return f"<Bat: id: {self.id}, name: {self.name}, colour: {self.colour}, smashability: {self.smashability}, player_id:{self.player.id}>"
+    
