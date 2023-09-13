@@ -13,3 +13,7 @@ from models.player import Player
 
 migrate = Migrate(app, db)
 
+from controllers.bat_controller import bat_blueprint
+
+app.register_blueprint(bat_blueprint)
+
