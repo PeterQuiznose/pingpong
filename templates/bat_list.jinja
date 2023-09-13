@@ -1,0 +1,53 @@
+{% extends "base.jinja"%}
+
+{% block content %}
+      <main>
+        <ul>
+          <form class="form-inline" action="/bats" method="post">
+            <label for="name_of_bat">Bat</label>
+            <input type="text" name="name_of_bat" id="name_of_bat" required>
+            <label for="colour">Colour</label>
+              <select name="colour" id="colour">
+                <option disabled selected value>-- select --</option>
+                <option value="Red">Red</option>
+                <option value="Black">Black</option>
+                <option value="Blue">Blue</option>
+                <option value="Neon Pink">Neon Pink</option>
+                <option value="Gold">Gold</option>
+                <option value="Rainbow">Rainbow</option>
+                <option value="Platinum">Platinum</option>
+            </select>
+            <label for="smashability">SMASHABILITY RATING</label>
+            <input type="range" name="smashability" id="smashability" min="1" max="10" required>
+          </form>
+        <div class="bat-container">
+          {% for bat in bats %}
+          <div class="bat">
+            <h2>Name: {{ bat.name }}</h2>
+            <h3>Colour: {{ bat.colour }}</h3>
+            <h4>SMASHABILITY RATING: {{ bat.smashability }}</h4>
+
+            {# <fieldset>
+              <legend>Book status</legend>
+                <input type="radio" id="checked-in" name="in-or-out - {{ book.title }}" value="checked-in"/>
+                <label for="checked-in">Check-in</label>
+                <input type="radio" id="checked-out" name="in-or-out - {{ book.title }}" value="checked-out"/>
+                <label for="checked-out">Check-Out</label>
+            </fieldset> #}
+
+            {# {% if book.checked_out %}
+              <p><i>Unavailable &#10060</i></p>
+              {% else %}
+                <p><i>Available &#9989</i></p>
+            {% endif %} #}
+
+            <a href="/bats/{{bats.index(bat)}}">Show Details</a>
+            <br>
+            <form class="form" action="/bats/delete/{{ bat.name }}" method="POST">
+            <input type="submit" value="Delete">
+            </form>
+          </div>
+          {% endfor %}
+        </div>
+      </main>
+    {% endblock %}
