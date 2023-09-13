@@ -12,15 +12,22 @@ def show_bats():
     bats_from_db = Bat.query.all()
     return render_template("bat_list.jinja", players=players_from_db, bats=bats_from_db)
 
-@bat_blueprint.route("/bats/<int:id>")
-def show_one_bat():
-    bat_to_show = Bat.query.get(id)
-    return render_template("show_one_bat.jinja", bats=bat_to_show)
+@bat_blueprint.route("/bats/search")
+def search():
+    return render_template('search.jinja', title="Not a real search")
 
-@bat_blueprint.route("/bats/delete/<int:id>")
+@bat_blueprint.route("/bats/<id>")
+def show_one_bat(id):
+    bat_to_show = Bat.query.get(id)
+    return render_template("show_one_bat.jinja", bat=bat_to_show)
+
+@bat_blueprint.route("/bats/delete/<id>", methods = ["POST"])
 def delete_bat(id):
-    db.session.delete(id)
-    return redirect ("/bats")
+    bat_to_delete = Bat.query.get(id)
+    if bat_to_delete:
+        db.session.delete(bat_to_delete)
+        db.session.commit()
+        return redirect("/bats")
 
 @bat_blueprint.route("/bats", methods=["POST"])
 def save_bat():
@@ -53,7 +60,7 @@ def save_bat():
 
     # db.session.commit()
 
-    # bat1 = Bat(name="Red Bat", colour="red", smashability=3)
+    # bat1 = Bat(name="Red Bat", colour="red", smashability=3, player_id=player1.id)
     # bat2 = Bat(name="The Black One", colour="black", smashability=5)
     # bat3 = Bat(name="The slicing, smashing super-dooper bat", colour="rainbow", smashability=10)
 

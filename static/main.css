@@ -1,0 +1,124 @@
+body {
+    background-color:rgba(0, 139, 139, 0.276);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+header {
+    background-color: #1445b8bd;
+}
+
+.navbar {
+    display: inline;
+}
+
+main > ul {
+    padding:10px;
+}
+
+.form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.442);
+    margin-right: 20px;
+    margin-left: 20px;
+    border: 1px solid black;
+  }
+
+.form-inline label {
+    margin: 5px 10px 5px 10px;
+    padding: 10px;
+    padding: 5px;
+  }
+
+.form-inline input[type="submit"] {
+    padding: 5px 10px 5px;
+    background-color: #1445b8bd;
+    border: 1px solid black;
+    color: white;
+    margin-left:10px;
+  }
+
+.form-inline input[type="text"] {
+    width: 18%
+}
+
+.form [type="submit"] {
+    padding: 5px 10px;
+    background-color: #7b55b3;
+    border: 1px solid black;
+    color: white;
+    margin-top: 5px;
+}
+
+.bat-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+.bat {
+    display: flex;
+    flex-direction: column;
+    width: 26vw;
+    background-color: #b7b7b7b1;
+    padding: 10px;
+    margin: 20px;
+    border: solid 2px black;
+    /* text-align: center; */
+  }
+
+.individual_bat {
+    width: 30vw;
+    background-color: #b7b7b7b1;
+    padding: 10px;
+    margin: 20px;
+    border: solid 2px black;
+    text-align: center;
+}
+
+.form input[type=submit]:hover {
+    background-color: #eb1414;
+  }
+
+.form-inline input[type="submit"]:hover {
+    background-color: green;
+}
+
+header > nav > ul {
+    list-style: none;
+    font-size: 18px;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+    padding-top: 10px;
+}
+
+.navbar > a {
+    color:white;
+} 
+
+.contact_box {
+    display: flex;
+    flex-direction: column;
+    width: 95vw;
+    background-color: #b7b7b7b1;
+    /* padding: 10px; */
+    margin: 20px;
+    border: solid 2px black;
+    text-align: center;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    background-color: #b7b7b7b1;
+    padding: 20px;
+    margin: 25px;
+    margin-left: 375px;
+    border: solid 2px black;
+    font-size: 18px;
+    text-align: center;
+}

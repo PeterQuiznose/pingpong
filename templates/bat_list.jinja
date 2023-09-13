@@ -24,6 +24,7 @@
                 {% for player in players %}
                 <option value="{{ player.id }}">{{ player.name }}</option>
                 {% endfor %} 
+            <input type="submit" value="Add bat"> 
           </form>
         <div class="bat-container">
           {% for bat in bats %}
@@ -31,10 +32,11 @@
             <h2>Name: {{ bat.name }}</h2>
             <h3>Colour: {{ bat.colour }}</h3>
             <h4>SMASHABILITY RATING: {{ bat.smashability }}</h4>
+            <h5>Owner: <a href="/bats/{{bat.player_id}}">{{ bat.player.name }}</a></h5>
 
             <a href="/bats/{{bats.index(bat)}}">Show Details</a>
             <br>
-            <form class="form" action="/bats/delete/{{ bat.name }}" method="POST">
+            <form class="form" action="/bats/delete/{{ bat.id }}" method="POST">
             <input type="submit" value="Delete">
             </form>
           </div>
