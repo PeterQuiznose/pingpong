@@ -45,6 +45,11 @@ def save_bat():
     db.session.commit()
     return redirect ("/bats")
 
+@bat_blueprint.route("/players/<id>")
+def show_player():
+    player_to_show = Player.query.get()
+    return render_template("/show_player.jinja", player=player_to_show)
+
 
 
 

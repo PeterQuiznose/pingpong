@@ -1,0 +1,13 @@
+{% extends "base.jinja"%}
+<p>{{ player.name }}</p>
+{% for bat in player.bats %}
+{% block content %}
+        <div class="bat-container">
+        
+            <div class="individual_bat">
+                <h1> {{ bat.name}} </h1>
+                <h2> {{ bat.colour }} </h2>
+                <h3> {{ bat.smashability }} </h3>
+            </div>
+        </div>
+{% endblock %}
