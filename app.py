@@ -5,7 +5,6 @@ from flask_migrate import Migrate
 
 app = Flask(__name__)
 
-app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = f"postgresql://darrenlackie@localhost:5432/pingpong"
 db = SQLAlchemy(app)
 from models.bat import Bat
